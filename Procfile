@@ -1,1 +1,1 @@
-web: ./welcome -port 
+web: welcome
