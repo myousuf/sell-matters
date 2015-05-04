@@ -1,20 +1,12 @@
 package main
 
 import (
-    "fmt"
-    "net/http"
-    "os"
+        "net/http"
 )
 
 func main() {
-    http.HandleFunc("/", hello)
-    fmt.Println("listening...")
-    err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
-    if err != nil {
-      panic(err)
-    }
+
+        http.Handle("/", http.FileServer(http.Dir(".")))
+        http.ListenAndServe(":3000", nil)
 }
 
-func hello(res http.ResponseWriter, req *http.Request) {
-    fmt.Fprintln(res, "we will come back soon")
-}
