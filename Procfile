@@ -1,1 +1,1 @@
-web: welcome
+web: GO
