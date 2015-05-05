@@ -1,1 +1,1 @@
-web: sell-matters -port $PORT
+web: sell-matters -port 8080
