@@ -1,1 +1,1 @@
-web: sell-matters
+web: sell-matters -port $PORT
