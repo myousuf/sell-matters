@@ -3,7 +3,7 @@ package main
 import (
        //"fmt"
         "net/http"
-        //"os"
+        "os"
 )
 
 func init() {
@@ -30,6 +30,10 @@ func main() {
             http.ServeFile(w, r, r.URL.Path[1:])
         }) 
    
-    http.ListenAndServe(":8080", nil)
+    //http.ListenAndServe(":8080", nil)
+    err := http.ListenAndServe(":" + os.Getenv("PORT"), nil)
+    if err != nil {
+      panic(err)
+    }    
 }
 

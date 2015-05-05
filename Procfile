@@ -1,1 +1,1 @@
-web: sell-matters -port 8080
+web: sell-matters
