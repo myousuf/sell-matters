@@ -1,0 +1,21 @@
+{
+  "name": "perfmatters.solutions",
+  "version": "1.0",
+  "homepage": "www.perfmatters.solutions",
+  "authors": [
+    "Yousuf Qureshi"
+  ],
+  "description": "this is for our own website",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5",
+    "core-ajax": "Polymer/core-ajax#^0.5"
+  }
+}

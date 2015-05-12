@@ -6,6 +6,10 @@
     
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
+
+     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="../bower_components/paper-elements/paper-elements.html">        
+
     
     <title>perfmatters.solutions</title>
     
@@ -15,6 +19,19 @@
     <!--     Fonts     -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+      paper-button{
+
+        background: red;
+        color: #FFF;
+      }
+      paper-button::shadow #ripple{
+        color: blue;
+      }
+
+
+    </style>
   
 </head>
 
@@ -100,7 +117,8 @@
                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
                             <input type="email" class="form-control transparent" placeholder="Your email here...">
                           </div>
-                          <button type="submit" class="btn btn-danger btn-fill">Notify Me</button>
+                          <paper-button raised>Notify Me</paper-button>                          
+                          <!--<button  class="btn btn-danger btn-fill">Notify Me</button>-->
                         </form>
 
                     </div>
