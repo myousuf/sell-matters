@@ -30,15 +30,15 @@ func index2(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func (h *handler) ServeHTTP(w http.ResponseWriter,r *http.Request) {
+// func (h *handler) ServeHTTP(w http.ResponseWriter,r *http.Request) {
 
-    w.Header().Set("Content-Type", "application/json")
-    w.WriteHeader(http.StatusOK)
-    enc := json.NewEncoder(w)
-    if err := enc.Encode(&MyResponse{}); nil != err {
-        fmt.Fprintf(w, `{"error":"%s"}`, err)
-    }
-}
+//     w.Header().Set("Content-Type", "application/json")
+//     w.WriteHeader(http.StatusOK)
+//     enc := json.NewEncoder(w)
+//     if err := enc.Encode(&MyResponse{}); nil != err {
+//         fmt.Fprintf(w, `{"error":"%s"}`, err)
+//     }
+// }
 
 func main() {
 
