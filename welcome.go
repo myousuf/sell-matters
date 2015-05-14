@@ -2,8 +2,9 @@ package main
 
 import (
        //"fmt"
+        "html/template"
         "net/http"
-        "os"
+        //"os"
 )
 
 func init() {
@@ -14,6 +15,21 @@ func init() {
         //     http.ServeFile(w, r, r.URL.Path[1:])
         // })        
 }
+
+
+func rootHandler(w http.ResponseWriter, r *http.Request){
+
+    page := template.Must(template.ParseFiles(
+            "index.html",
+        ))
+
+    if err := page.Execute(w,nil); err != nil{
+        panic(err)
+    }
+
+}
+
+
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
@@ -42,16 +58,16 @@ func index2(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-            http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
             //fmt.Fprint(w,r.URL.Path[1:])
             http.ServeFile(w, r, r.URL.Path[1:])
-            }) 
-            http.HandleFunc("/index2", index2)
+        }) 
+    http.HandleFunc("/index2", index2)
    
-    //http.ListenAndServe(":8080", nil)
-    err := http.ListenAndServe(":" + os.Getenv("PORT"), nil)
-    if err != nil {
-      panic(err)
-    }    
+    http.ListenAndServe(":8080", nil)
+    // err := http.ListenAndServe(":" + os.Getenv("PORT"), nil)
+    // if err != nil {
+    //   panic(err)
+    // }    
 }
 
